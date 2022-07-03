@@ -1,0 +1,7 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        app:defaultValue="0"
+        app:key="DARK_STATUS" />
+
+</PreferenceScreen>

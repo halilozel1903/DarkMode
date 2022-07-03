@@ -1,12 +1,21 @@
-# Dark 😴 Mode 👀
+# Dark 😴 Mode 👀 App 📱
 
 You will be able to change the theme within the application. You can customize your phone by choosing the Light ☀️ or Dark 🌙  theme from the option that appears.
 
+## Libraries 🛠 
+
+- [Kotlin](https://github.com/JetBrains/kotlin) -> A modern programming languagethat makes developers happier.
+- [Data Binding](https://developer.android.com/topic/libraries/data-binding) -> Support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
+- [Preference](https://developer.android.com/guide/topics/ui/settings) -> Preference is the basic building block of the Preference Library
+
+
 ## Screenshots 📸
+
+<img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_1.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_4.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_3.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_2.png" width="200"/>
 
 ## Donation 💸
 
-If this project help 💁 you, you can give me a cup of coffee. ☕
+If this project help 💁 you, Can you give me a cup of coffee? ☕
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/halilozel1903)
 

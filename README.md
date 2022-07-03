@@ -1,6 +1,11 @@
 # Dark 😴 Mode 👀 App 📱
 
+![DarkMode](https://miro.medium.com/max/1838/1*hFq8AZ0ur1B6_Rf1_3LNxQ.png)
+
 You will be able to change the theme within the application. You can customize your phone by choosing the Light ☀️ or Dark 🌙  theme from the option that appears.
+
+
+![Android Libraries](https://miro.medium.com/max/1000/1*4XZB9QZ7Py9QDds86ng5nw.png)
 
 ## Libraries 🛠 
 

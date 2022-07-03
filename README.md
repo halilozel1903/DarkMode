@@ -16,7 +16,11 @@ You will be able to change the theme within the application. You can customize y
 
 ## Screenshots 📸
 
-<img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_1.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_4.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_3.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_2.png" width="200"/>
+<img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_1.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_4.png" width="200"/> || 
+
+<br>
+
+<img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_3.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_2.png" width="200"/>
 
 ## Donation 💸
 

@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         val checkedItem = MyPreferences(this).darkMode
 
         builder.setSingleChoiceItems(themes, checkedItem) { dialog, which ->
-
             when (which) {
                 ZERO -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -45,7 +44,6 @@ class MainActivity : AppCompatActivity() {
                     delegate.applyDayNight()
                     dialog.dismiss()
                 }
-
             }
         }
         val dialog = builder.create()
@@ -71,11 +69,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val LIGHT = "Light Theme"
-        const val DARK = "Dark Theme"
-        const val DEFAULT = "System Default Theme"
-        const val ZERO = 0
-        const val ONE = 1
-        const val TWO = 2
+        private const val LIGHT = "Light Theme"
+        private const val DARK = "Dark Theme"
+        private const val DEFAULT = "System Default Theme"
+        private const val ZERO = 0
+        private const val ONE = 1
+        private const val TWO = 2
     }
 }

@@ -27,19 +27,19 @@ class MainActivity : AppCompatActivity() {
         builder.setSingleChoiceItems(themes, checkedItem) { dialog, which ->
 
             when (which) {
-                0 -> {
+                ZERO -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                     MyPreferences(this).darkMode = 0
                     delegate.applyDayNight()
                     dialog.dismiss()
                 }
-                1 -> {
+                ONE -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                     MyPreferences(this).darkMode = 1
                     delegate.applyDayNight()
                     dialog.dismiss()
                 }
-                2 -> {
+                TWO -> {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                     MyPreferences(this).darkMode = 2
                     delegate.applyDayNight()
@@ -55,15 +55,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkToTheme() {
         when (MyPreferences(this).darkMode) {
-            0 -> {
+            ZERO -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 delegate.applyDayNight()
             }
-            1 -> {
+            ONE -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 delegate.applyDayNight()
             }
-            2 -> {
+            TWO -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
                 delegate.applyDayNight()
             }
@@ -74,5 +74,8 @@ class MainActivity : AppCompatActivity() {
         const val LIGHT = "Light Theme"
         const val DARK = "Dark Theme"
         const val DEFAULT = "System Default Theme"
+        const val ZERO = 0
+        const val ONE = 1
+        const val TWO = 2
     }
 }

@@ -14,7 +14,7 @@ You will be able to change the theme within the application. You can customize y
 - [Preference](https://developer.android.com/guide/topics/ui/settings) -> Preference is the basic building block of the Preference Library
 
 
-## Screenshots 📸
+## App 📲 Screenshots 📸
 
 <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_1.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_4.png" width="200"/> || 
 

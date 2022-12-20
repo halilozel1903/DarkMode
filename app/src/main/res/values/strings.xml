@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DarkMode</string>
+    <string name="app_name">Dark Mode</string>
     <string name="choose_theme_text">Choose theme</string>
     <string name="txt_title">Hello Android Theme!</string>
     <string name="txt_change_theme">Change theme</string>

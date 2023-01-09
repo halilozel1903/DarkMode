@@ -16,13 +16,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
         binding.changeTheme = this
         checkToTheme()
     }
 
     fun chooseThemeDialog() {
-        val builder = AlertDialog.Builder(this)
+        val builder = AlertDialog.Builder(this@MainActivity)
         builder.setTitle(getString(R.string.choose_theme_text))
         val themes = arrayOf(LIGHT, DARK, DEFAULT)
         val checkedItem = MyPreferences(this@MainActivity).darkMode

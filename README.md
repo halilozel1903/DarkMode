@@ -1,17 +1,17 @@
-# Dark Mode App
+# 🌗 Dark Mode App
 
 Modern Android sample showcasing a polished light/dark/system theme switcher built fully with **Jetpack Compose**, **Material 3**, **MVVM**, `StateFlow`, and coroutine-friendly **DataStore** persistence.
 
-## Highlights
+## ✨ Highlights
 
-- **Full Jetpack Compose UI:** No XML screen or DataBinding layer; the main screen is rendered with composable functions.
-- **Material 3 visual polish:** Dynamic colors on Android 12+, gradient hero card, rounded surfaces, animated selected-theme feedback, and icon-led option rows.
-- **MVVM state management:** `MainViewModel` exposes a single `ThemeUiState` via `StateFlow` and the UI collects it lifecycle-safely.
-- **Three theme modes:** Light, Dark, and System Default modes are represented with a type-safe `ThemeMode` enum.
-- **Modern persistence:** Theme preference is stored with AndroidX DataStore instead of SharedPreferences.
-- **Edge-to-edge experience:** `ComponentActivity` enables edge-to-edge rendering and handles safe drawing insets in Compose.
+- 🧩 **Full Jetpack Compose UI:** No XML screen or DataBinding layer; the main screen is rendered with composable functions.
+- 🎨 **Material 3 visual polish:** Dynamic colors on Android 12+, gradient hero card, rounded surfaces, animated selected-theme feedback, and icon-led option rows.
+- 🧠 **MVVM state management:** `MainViewModel` exposes a single `ThemeUiState` via `StateFlow` and the UI collects it lifecycle-safely.
+- 🌗 **Three theme modes:** Light, Dark, and System Default modes are represented with a type-safe `ThemeMode` enum.
+- 💾 **Modern persistence:** Theme preference is stored with AndroidX DataStore instead of SharedPreferences.
+- 📐 **Edge-to-edge experience:** `ComponentActivity` enables edge-to-edge rendering and handles safe drawing insets in Compose.
 
-## Tech Stack
+## 🧰 Tech Stack
 
 | Area | Choice |
 | --- | --- |
@@ -24,7 +24,7 @@ Modern Android sample showcasing a polished light/dark/system theme switcher bui
 | Target SDK | 34 |
 | Java target | 17 |
 
-## Project Structure
+## 🗂️ Project Structure
 
 ```text
 app/src/main/java/com/halil/ozel/darkmode/
@@ -39,7 +39,7 @@ app/src/main/res/
 └── drawable/                # Existing image/screenshot assets
 ```
 
-## How It Works
+## ⚙️ How It Works
 
 1. `MainActivity` starts as a Compose-only `ComponentActivity`, enables edge-to-edge rendering, and calls `setContent`.
 2. `MainViewModel` observes `ThemePreferences.themeMode` and maps it into `ThemeUiState`.
@@ -48,46 +48,46 @@ app/src/main/res/
 5. On Android 12 and newer, the app uses Material You dynamic color schemes; older devices use the fallback Material 3 color schemes.
 6. When the user taps a theme row, `MainViewModel.selectTheme()` persists the new value with DataStore and the UI updates reactively.
 
-## Getting Started
+## 🚀 Getting Started
 
-### Requirements
+### ✅ Requirements
 
 - Android Studio with Jetpack Compose support
 - JDK 17
 - Android SDK Platform 34
 - Network access to resolve Gradle, Android Gradle Plugin, Compose, Lifecycle, and DataStore dependencies if they are not already cached locally
 
-### Build
+### 🏗️ Build
 
 ```bash
 ./gradlew assembleDebug
 ```
 
-### Install on a connected device/emulator
+### 📲 Install on a connected device/emulator
 
 ```bash
 ./gradlew installDebug
 ```
 
-### Run checks
+### 🧪 Run checks
 
 ```bash
 ./gradlew test
 ./gradlew lint
 ```
 
-## Screenshots
+## 🖼️ Screenshots
 
 Existing screenshot assets are stored in `app/src/main/res/drawable/`. Re-capture them after installing the Compose version so README visuals match the latest UI.
 
-## Customization Ideas
+## 🎨 Customization Ideas
 
-- Move UI strings into `strings.xml` for easier localization and translation workflows.
-- Split composables into feature-specific files as the screen grows.
-- Add Compose UI tests for theme selection and DataStore persistence.
-- Add preview variants for light, dark, and system theme states.
+- 🌍 Move UI strings into `strings.xml` for easier localization and translation workflows.
+- 🧱 Split composables into feature-specific files as the screen grows.
+- 🧪 Add Compose UI tests for theme selection and DataStore persistence.
+- 👀 Add preview variants for light, dark, and system theme states.
 
-## License
+## 📄 License
 
 MIT License
 

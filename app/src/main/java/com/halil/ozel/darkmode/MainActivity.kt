@@ -13,68 +13,57 @@ import com.halil.ozel.darkmode.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val preferences by lazy { MyPreferences(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.changeTheme = this
-        checkToTheme()
+        applySavedTheme()
+        updateCurrentThemeText(preferences.darkMode)
     }
 
     fun chooseThemeDialog() {
-        val builder = AlertDialog.Builder(this@MainActivity)
-        builder.setTitle(getString(R.string.choose_theme_text))
-        val themes = arrayOf(LIGHT, DARK, DEFAULT)
-        val checkedItem = MyPreferences(this@MainActivity).darkMode
+        val themeLabels = themeLabels()
+        val checkedItem = preferences.darkMode
 
-        builder.setSingleChoiceItems(themes, checkedItem) { dialog, which ->
-            when (which) {
-                ZERO -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                    MyPreferences(this@MainActivity).darkMode = ZERO
-                    delegate.applyDayNight()
-                    dialog.dismiss()
-                }
-                ONE -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                    MyPreferences(this@MainActivity).darkMode = ONE
-                    delegate.applyDayNight()
-                    dialog.dismiss()
-                }
-                TWO -> {
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                    MyPreferences(this@MainActivity).darkMode = TWO
-                    delegate.applyDayNight()
-                    dialog.dismiss()
-                }
+        AlertDialog.Builder(this)
+            .setTitle(getString(R.string.choose_theme_text))
+            .setSingleChoiceItems(themeLabels, checkedItem) { dialog, selectedTheme ->
+                applyTheme(selectedTheme)
+                dialog.dismiss()
             }
-        }
-         builder.create().apply {
-            show()
-        }
+            .show()
     }
 
-
-    private fun checkToTheme() {
-        when (MyPreferences(this@MainActivity).darkMode) {
-            ZERO -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                delegate.applyDayNight()
-            }
-            ONE -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                delegate.applyDayNight()
-            }
-            TWO -> {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
-                delegate.applyDayNight()
-            }
-        }
+    private fun applySavedTheme() {
+        applyTheme(preferences.darkMode, shouldPersist = false)
     }
 
-    companion object {
-        private const val LIGHT = "Light Theme"
-        private const val DARK = "Dark Theme"
-        private const val DEFAULT = "System Default Theme"
+    private fun applyTheme(theme: Int, shouldPersist: Boolean = true) {
+        AppCompatDelegate.setDefaultNightMode(theme.toNightMode())
+        if (shouldPersist) {
+            preferences.darkMode = theme
+        }
+        updateCurrentThemeText(theme)
+        delegate.applyDayNight()
+    }
+
+    private fun updateCurrentThemeText(theme: Int) {
+        val label = themeLabels().getOrElse(theme) { getString(R.string.theme_system) }
+        binding.txtCurrentTheme.text = getString(R.string.current_theme_label, label)
+    }
+
+    private fun themeLabels(): Array<String> = arrayOf(
+        getString(R.string.theme_light),
+        getString(R.string.theme_dark),
+        getString(R.string.theme_system)
+    )
+
+    private fun Int.toNightMode(): Int = when (this) {
+        ZERO -> AppCompatDelegate.MODE_NIGHT_NO
+        ONE -> AppCompatDelegate.MODE_NIGHT_YES
+        TWO -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
     }
 }

@@ -4,15 +4,10 @@
         <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
         <item name="colorSecondary">@color/colorAccent</item>
         <item name="android:colorAccent">@color/colorAccent</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightStatusBar">false</item>
         <item name="android:navigationBarColor">@color/surface</item>
         <item name="android:windowBackground">@color/surface</item>
         <item name="materialButtonStyle">@style/Widget.App.Button</item>
-    </style>
-
-    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
-        <item name="cornerRadius">18dp</item>
-        <item name="android:minHeight">56dp</item>
     </style>
 
     <style name="Widget.App.FeatureCard" parent="Widget.MaterialComponents.CardView">

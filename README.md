@@ -1,36 +1,91 @@
-# Dark 😴 Mode 👀 App 📱
+# Dark Mode App
 
-![DarkMode](https://miro.medium.com/max/1838/1*hFq8AZ0ur1B6_Rf1_3LNxQ.png)
+Modern, lightweight Android sample that demonstrates a polished light/dark/system theme switcher with persistent user preferences.
 
-You will be able to change the theme within the application. You can customize your phone by choosing the Light ☀️ or Dark 🌙  theme from the option that appears.
+## Highlights
 
+- **Modern Material UI:** Rounded cards, a gradient hero area, clear hierarchy and Material buttons.
+- **Three theme modes:** Light, Dark and System Default via `AppCompatDelegate` DayNight modes.
+- **Persistent settings:** The selected mode is saved with AndroidX Preference/SharedPreferences and restored at launch.
+- **Accessible copy:** Turkish UI strings with clear labels and status feedback for the active theme.
+- **Night resources:** Dedicated `values-night` color resources for a more consistent dark-mode palette.
 
-![Android Libraries](https://miro.medium.com/max/1000/1*4XZB9QZ7Py9QDds86ng5nw.png)
+## Tech Stack
 
-## Libraries 🛠 
+| Area | Choice |
+| --- | --- |
+| Language | Kotlin |
+| UI | XML layouts, Data Binding, Material Components, Constraint/Layout widgets |
+| Theme engine | AppCompat DayNight |
+| Persistence | AndroidX Preference KTX |
+| Minimum SDK | 28 |
+| Target SDK | 34 |
 
-- [Kotlin](https://github.com/JetBrains/kotlin) -> A modern programming languagethat makes developers happier.
-- [Data Binding](https://developer.android.com/topic/libraries/data-binding) -> Support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
-- [Preference](https://developer.android.com/guide/topics/ui/settings) -> Preference is the basic building block of the Preference Library
+## Project Structure
 
+```text
+app/src/main/java/com/halil/ozel/darkmode/
+├── MainActivity.kt      # Theme dialog, mode application and UI status text
+├── MyPreferences.kt     # Persisted dark-mode preference wrapper
+└── Numbers.kt           # Small constants used for mode indexes
 
-## App 📲 Screenshots 📸
-
-<img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_1.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_4.png" width="200"/> || 
-
-<br>
-
-<img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_3.png" width="200"/> || <img src="https://github.com/halilozel1903/DarkMode/blob/master/app/src/main/res/drawable/screen_2.png" width="200"/>
-
-## Donation 💸
-
-If this project help 💁 you, Can you give me a cup of coffee? ☕
-
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/halilozel1903)
-
-
-## License ℹ️
+app/src/main/res/
+├── layout/activity_main.xml       # Main modernized screen
+├── values/                        # Light theme strings, colors, dimensions and styles
+├── values-night/                  # Dark theme color/style overrides
+└── drawable/hero_gradient.xml     # Hero card background
 ```
+
+## How It Works
+
+1. `MainActivity` reads the saved integer theme preference on startup.
+2. The integer is mapped to the corresponding `AppCompatDelegate` night mode:
+   - `0` → `MODE_NIGHT_NO`
+   - `1` → `MODE_NIGHT_YES`
+   - `2` → `MODE_NIGHT_FOLLOW_SYSTEM`
+3. The choice is applied immediately and saved for future launches.
+4. The current theme label is shown on the home screen so users always know which mode is active.
+
+## Getting Started
+
+### Requirements
+
+- Android Studio with Android Gradle Plugin support
+- JDK 17
+- Android SDK Platform 34
+
+### Build
+
+```bash
+./gradlew assembleDebug
+```
+
+### Install on a connected device/emulator
+
+```bash
+./gradlew installDebug
+```
+
+### Run checks
+
+```bash
+./gradlew test
+./gradlew lint
+```
+
+## Screenshots
+
+Existing screenshots are stored in `app/src/main/res/drawable/`. Re-capture them after installing the app if you want the README images to reflect the refreshed UI.
+
+## Customization Ideas
+
+- Add Material You dynamic colors for Android 12+.
+- Replace the dialog with a bottom sheet for an even more immersive picker.
+- Add UI tests that verify the selected theme survives process recreation.
+- Localize strings into additional languages under `res/values-*/strings.xml`.
+
+## License
+
 MIT License
 
 Copyright (c) 2023 Halil OZEL
@@ -52,4 +107,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```

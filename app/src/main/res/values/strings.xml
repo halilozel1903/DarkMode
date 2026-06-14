@@ -1,6 +1,17 @@
 <resources>
     <string name="app_name">Dark Mode</string>
-    <string name="choose_theme_text">Choose theme</string>
-    <string name="txt_title">Hello Android Theme!</string>
-    <string name="txt_change_theme">Change theme</string>
+    <string name="choose_theme_text">Tema seç</string>
+    <string name="txt_title">Dark Mode deneyimini yenile</string>
+    <string name="txt_subtitle">Işık, karanlık veya sistem ayarı arasında anında geçiş yap. Seçimin güvenli şekilde saklanır.</string>
+    <string name="txt_change_theme">Tema tercihini değiştir</string>
+    <string name="theme_light">Açık tema</string>
+    <string name="theme_dark">Koyu tema</string>
+    <string name="theme_system">Sistem varsayılanı</string>
+    <string name="current_theme_label">Aktif tema: %1$s</string>
+    <string name="feature_fast_title">Anında geçiş</string>
+    <string name="feature_fast_body">AppCompat DayNight desteğiyle uygulama yeniden başlatmadan güncellenir.</string>
+    <string name="feature_saved_title">Kalıcı tercih</string>
+    <string name="feature_saved_body">Seçilen tema SharedPreferences ile sonraki açılışlarda korunur.</string>
+    <string name="feature_accessible_title">Modern ve erişilebilir</string>
+    <string name="feature_accessible_body">Material bileşenleri, yüksek kontrastlı renkler ve anlaşılır metinler kullanılır.</string>
 </resources>

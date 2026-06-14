@@ -10,23 +10,127 @@
             type="com.halil.ozel.darkmode.MainActivity" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/surface"
+        android:fillViewport="true"
         tools:context=".MainActivity">
 
-        <Button
-            android:id="@+id/btnTheme"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_value"
-            android:layout_marginEnd="@dimen/margin_value"
-            android:onClick="@{() -> changeTheme.chooseThemeDialog()}"
-            android:text="@string/txt_change_theme"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_lg">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="@dimen/card_radius"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/surface_variant"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/hero_gradient"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <TextView
+                        android:layout_width="@dimen/icon_size"
+                        android:layout_height="@dimen/icon_size"
+                        android:background="@drawable/hero_gradient"
+                        android:gravity="center"
+                        android:text="☀️"
+                        android:textSize="28sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:text="@string/txt_title"
+                        android:textColor="@color/on_surface"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:lineSpacingExtra="4dp"
+                        android:text="@string/txt_subtitle"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txtCurrentTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_lg"
+                        android:textColor="@color/on_surface"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="Aktif tema: Sistem varsayılanı" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnTheme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:onClick="@{() -> changeTheme.chooseThemeDialog()}"
+                        android:text="@string/txt_change_theme"
+                        app:icon="@android:drawable/ic_menu_manage"
+                        app:iconGravity="textStart" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.App.FeatureCard">
+
+                <LinearLayout style="@style/Widget.App.FeatureContent">
+
+                    <TextView
+                        style="@style/TextAppearance.App.FeatureTitle"
+                        android:text="@string/feature_fast_title" />
+
+                    <TextView
+                        style="@style/TextAppearance.App.FeatureBody"
+                        android:text="@string/feature_fast_body" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.App.FeatureCard">
+
+                <LinearLayout style="@style/Widget.App.FeatureContent">
+
+                    <TextView
+                        style="@style/TextAppearance.App.FeatureTitle"
+                        android:text="@string/feature_saved_title" />
+
+                    <TextView
+                        style="@style/TextAppearance.App.FeatureBody"
+                        android:text="@string/feature_saved_body" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.App.FeatureCard">
+
+                <LinearLayout style="@style/Widget.App.FeatureContent">
+
+                    <TextView
+                        style="@style/TextAppearance.App.FeatureTitle"
+                        android:text="@string/feature_accessible_title" />
+
+                    <TextView
+                        style="@style/TextAppearance.App.FeatureBody"
+                        android:text="@string/feature_accessible_body" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
 </layout>
